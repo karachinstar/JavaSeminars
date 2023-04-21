@@ -30,8 +30,7 @@ public class razbortask {
         if (max_count <= curr_count){
             max_count = curr_count;
         }
-        System.out.println();
-        System.out.printf("максимальное число единичек в массиве - %d",max_count);
+        System.out.printf("\nмаксимальное число единичек в массиве - %d",max_count);
     }
 
 }
