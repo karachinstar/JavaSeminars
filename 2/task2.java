@@ -6,33 +6,20 @@
 public class task2 {
 
     public static void main(String[] args) {
-        StringBuilder start = new StringBuilder("aaaaaabbbbcddaaaccc");
-        StringBuilder resault = new StringBuilder(" ");
+        StringBuilder start = new StringBuilder("aaabbdsdfsdfxcvxcvvxvxccca");
+        StringBuilder resault = new StringBuilder("");
         Integer counter = 1;
-        int j = 1;
-        int l = 1;
-        // char letter =
-        for (int i = 0; i < start.length(); i++) {
-            if (start.charAt(i) != resault.charAt(resault.length() - l)) {
-                while (start.charAt(i) == start.charAt(i + j) && i+j < start.length() - 1) {
-                    counter++;
-                    j++;
-                }
-                i = i + counter - 1;
-                if (counter > 1) {
-                    resault.append(start.charAt(i) + counter.toString());
-                    l = 2;
-                    counter = 1;
-                    j = 1;
-                } else {
-                    resault.append(start.charAt(i));
-                    l = 1;
-                    counter = 1;
-                    j = 1;
-                }
+        for (int i = 0; i < start.length(); i = i + counter) {
+            resault.append(start.charAt(i));
+            counter = 1;
+            while (i + counter < start.length() && start.charAt(i) == start.charAt(i + counter)) {
+                counter++;
             }
-            
+            if (counter > 1) {
+                resault.append(counter.toString());
+            }
         }
         System.out.println(resault.toString());
     }
+
 }
